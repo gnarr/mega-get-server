@@ -8,7 +8,7 @@ websocketd --passenv INPUT_TIMEOUT,DOWNLOAD_DIR,TRANSFER_LIST_LIMIT,PATH_DISPLAY
 mega-permissions --files -s "${NEW_FILE_PERMISSIONS}"
 mega-permissions --folders -s "${NEW_FOLDER_PERMISSIONS}"
 
-WEBSOCKET_URL="ws://${EXTERNAL_HOST}:${EXTERNAL_PORT}"
+WEBSOCKET_URL="wss://${EXTERNAL_HOST}:${EXTERNAL_PORT}"
 sed --in-place "s|websocket = \".*\"|websocket = \"${WEBSOCKET_URL}\"|" "${HOME}/mega-get.html"
 
 # setup files for serving over websocket
